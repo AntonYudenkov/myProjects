@@ -32,29 +32,29 @@ namespace GuessTheNumber.Controllers
         {
             string res = string.Empty;
             vle = Convert.ToInt32(vle).ToString("D4");
-            char[] arr_vle = vle.ToCharArray();
-            char[] arr_secret = secret.ToCharArray();
+            var arrVle = vle.ToCharArray();
+            var arrSecret = secret.ToCharArray();
 
             for (var i = 0; i <= 3; i++)
             {
-                if (arr_vle[i] == arr_secret[i])
+                if (arrVle[i] == arrSecret[i])
                 {
                     res = res + "B";
                 }
                 else
                 {
-                    res = res + arr_vle[i];
+                    res = res + arrVle[i];
                 }
             }
 
-            char[] arr_res = res.ToCharArray();
+            var arrRes = res.ToCharArray();
             for (var i = 0; i <= 3; i++)
             {
-                if (arr_res[i].ToString() != "B")
+                if (arrRes[i].ToString() != "B")
                 {
-                    if (res.Contains(arr_secret[i]))
+                    if (res.Contains(arrSecret[i]))
                     {
-                        res = res.Replace(arr_secret[i].ToString(), "K");
+                        res = res.Replace(arrSecret[i].ToString(), "K");
                     }
                 }
             }
